@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Web</title>
+    <link rel="stylesheet" href="Styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="display">
+            <input type="text" id="resultado" readonly>
+        </div>
+        <div class="botones">
+            <button class="operador C" onclick="manejarClick('C')">C</button>
+            <button class="operador ←" onclick="manejarClick('←')">←</button>
+            <button class="operador %" onclick="manejarClick('%')">%</button>
+            <button class="operador ÷" onclick="manejarClick('÷')">÷</button>
+
+            <button class="numero 7" onclick="manejarClick('7')">7</button>
+            <button class="numero 8" onclick="manejarClick('8')">8</button>
+            <button class="numero 9" onclick="manejarClick('9')">9</button>
+            <button class="operador X" onclick="manejarClick('x')">x</button>
+
+            <button class="numero 4" onclick="manejarClick('4')">4</button>
+            <button class="numero 5" onclick="manejarClick('5')">5</button>
+            <button class="numero 6" onclick="manejarClick('6')">6</button>
+            <button class="operador resta" onclick="manejarClick('-')">-</button>
+
+            <button class="numero 1" onclick="manejarClick('1')">1</button>
+            <button class="numero 2" onclick="manejarClick('2')">2</button>
+            <button class="numero 3" onclick="manejarClick('3')">3</button>
+            <button class="operador suma" onclick="manejarClick('+')">+</button>
+
+            <button class="numero" onclick="manejarClick('0')">0</button>
+            <button class="numero ." onclick="manejarClick('.')">.</button>
+            <button class="operador igual" onclick="manejarClick('=')">=</button>
+        </div>
+    </div>
+    <script src="App.js"></script>
+</body>
+
+</html>

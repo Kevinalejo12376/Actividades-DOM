@@ -1,28 +1,9 @@
-const display = document.getElementById('resultado');
-const botonesContainer = document.querySelector('.botones');
 
-// Obtener el elemento del display y asegurarse de que no esté vacío
+
+const display = document.getElementById('resultado');
+
 if (display.value === '') {
     display.value = '0';
-}
-
-// Escuchar clicks en todos los botones de la calculadora
-if (botonesContainer) {
-    botonesContainer.addEventListener('click', handleBotonesClick);
-}
-
-function handleBotonesClick(evento) {
-    // Obtener el botón que fue clickeado
-    const botonClickeado = evento.target;
-
-    // Verificar que realmente sea un botón
-    if (botonClickeado.tagName !== 'BUTTON') return;
-
-    // Obtener el valor del botón (puede ser un número, operador, etc.)
-    let valor = botonClickeado.textContent.trim();
-
-    // Llamar a la función que maneja ese valor
-    manejarClick(valor);
 }
 
 function manejarClick(valor) {
@@ -32,6 +13,7 @@ function manejarClick(valor) {
         return;
     }
 
+    // Decidir qué hacer según el valor del botón clickeado
     switch (valor) {
         case 'C':
             limpiar();
@@ -72,7 +54,7 @@ function agregarCaracter(caracter) {
     }
 
     // No permitir más de un punto decimal en el número actual
-    // obtener el último operador en la cadena
+    // Obtener el último operador en la cadena
     let indice = -1;
 
     operadores.forEach(op => {
@@ -80,14 +62,15 @@ function agregarCaracter(caracter) {
         if (pos > indice) indice = pos;
     });
 
-    // obtener el último número escrito
+    // Obtener el último número escrito
     const ultimoNumero = display.value.slice(indice + 1);
 
-    // evitar que se ponga más de un punto decimal
+    // Evitar que se ponga más de un punto decimal
     if (caracter === '.' && ultimoNumero.includes('.')) {
         return;
     }
 
+    // Agregar el carácter al display
     display.value += caracter;
 }
 
